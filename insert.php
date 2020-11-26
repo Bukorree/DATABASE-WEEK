@@ -39,12 +39,10 @@ if (mysqli_query($conn, $sql)) {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
   }
   
-mysqli_close($conn);
-if ($done)
-{
-    header("Location: https://labitf2.azurewebsites.net/show.php");
-    exit();
-}
+if (mysqli_query($conn, $sql)) {
+    header("location:show.php");
+  } else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 ?>
   </div>
 </body>
